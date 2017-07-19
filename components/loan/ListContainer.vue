@@ -5,9 +5,9 @@
       <img class="front-img" :src="getBanner"/>
       <tab></tab>
     </div>
-    <!--<div class="company-info">-->
-      <!--<slot @on-render="initList"></slot>-->
-    <!--</div>-->
+    <div class="company-info">
+      <slot @on-render="initList"></slot>
+    </div>
     <b-footer></b-footer>
     <case-number></case-number>
   </div>
@@ -20,7 +20,7 @@
   import CaseNumber from '../CaseNumber'
   import Tab from './Tab'
   import Navbar from '../Navbar'
-//  import ProductList from './ProductList'
+  import ProductList from './ProductList'
 
   const banner = {
     dae: '//file.baixing.net/201706/a76c1f73369099a2415255c311e3e1cc.png',
@@ -30,7 +30,7 @@
 
   export default {
     components: {
-//      ProductList,
+      ProductList,
       Navbar,
       Tab,
       BFooter,
@@ -53,22 +53,21 @@
       ])
     },
     created () {
-      console.log('listContainer')
       this.showLoading = this.isLoading
       this.setBaseMode(this.mode)
-//      this.initLoanInfo().then((res) => {
-//        const routeName = this.$route.name
-//        const query = this.$route.query
-//
-//        if (routeName === 'market' && query && query.bxleads) {
-//          this.saveApplyInfo({type: 'bxleads'})
-//          if (this.hasLogin) {
-//            this.$router.replace({name: 'mktregister'})
-//          } else {
-//            this.$router.replace({name: 'mktlogin'})
-//          }
-//        }
-//      })
+      this.initLoanInfo().then((res) => {
+        const routeName = this.$route.name
+        const query = this.$route.query
+
+        if (routeName === 'market' && query && query.bxleads) {
+          this.saveApplyInfo({type: 'bxleads'})
+          if (this.hasLogin) {
+            this.$router.replace({name: 'mktregister'})
+          } else {
+            this.$router.replace({name: 'mktlogin'})
+          }
+        }
+      })
     }
   }
 </script>

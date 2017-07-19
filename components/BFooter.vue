@@ -4,7 +4,7 @@
 		<p>关注“
 			<strong>百姓有米</strong>”微信公众号</p>
 		<p>随时随地都能贷，查询贷款状态，更有惊喜好礼相送。</p>
-		<router-link class="link" :to="{name: 'wechat'}">+ 关注</router-link>
+		<nuxt-link class="link" :to="{name: 'WeChatHelperPage'}">+ 关注</nuxt-link>
 	</div>
 </template>
 

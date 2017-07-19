@@ -1,8 +1,8 @@
 <template>
   <div class="tabbar">
     <img class="jinrong-logo" src="~static/img/logo.png"/>
-    <nuxt-link to="/mine/menu" v-if="hasLogin">
-      <img class="link-to-mine" src="/static/img/avatar.png"/>
+    <nuxt-link to="/" v-if="hasLogin">
+      <img class="link-to-mine" src="~static/img/avatar.png"/>
     </nuxt-link>
   </div>
 </template>

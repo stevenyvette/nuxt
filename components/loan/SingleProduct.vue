@@ -1,25 +1,25 @@
 <template>
-  <!--<group class="loan-company-info" @click.native="log(name)">-->
-    <!--<img class="company-logo" :src="getUrl()">-->
-    <!--<div class="brief-info">-->
-      <!--<div class="company-title">-->
-        <!--<span class="company-name">{{ product.name }}</span>-->
-        <!--<span class="loan-condition">{{ product.condition }}</span>-->
-      <!--</div>-->
-      <!--<div class="info">-->
-        <!--<span class="info-label">推荐{{ periodMapping[product.interestPeriod] }}利率(%)</span>-->
-        <!--<span class="loan-interst">{{ product.interest | interestFilter}}</span>-->
-      <!--</div>-->
-      <!--<div class="info">-->
-        <!--<span class="info-label">{{ product.limit | amountLabel}} </span>-->
-        <!--<span class="loan-limit">{{ product.limit }}万</span>-->
-      <!--</div>-->
-      <!--<div class="info">-->
-        <!--<span class="info-label">放款时间</span>-->
-        <!--<span class="loan-time">{{ product.time }}</span>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</group>-->
+  <group class="loan-company-info" @click.native="log(name)">
+    <img class="company-logo" :src="getUrl()">
+    <div class="brief-info">
+      <div class="company-title">
+        <span class="company-name">{{ product.name }}</span>
+        <span class="loan-condition">{{ product.condition }}</span>
+      </div>
+      <div class="info">
+        <span class="info-label">推荐{{ periodMapping[product.interestPeriod] }}利率(%)</span>
+        <span class="loan-interst">{{ product.interest | interestFilter}}</span>
+      </div>
+      <div class="info">
+        <span class="info-label">{{ product.limit | amountLabel}} </span>
+        <span class="loan-limit">{{ product.limit }}万</span>
+      </div>
+      <div class="info">
+        <span class="info-label">放款时间</span>
+        <span class="loan-time">{{ product.time }}</span>
+      </div>
+    </div>
+  </group>
 </template>
 
 <script>

@@ -1,20 +1,18 @@
 <template>
-  <section class="main-container">
     <list-container :mode="mode">
-      <!--<product-list @on-apply="redirectH5" :companyInfoList="companyInfo"></product-list>-->
-      <!--<title-list stitle="已申请产品">-->
-        <!--<product-list @on-apply="redirectH5" :companyInfoList="appliedCompanyInfo"></product-list>-->
-      <!--</title-list>-->
+      <product-list @on-apply="redirectH5" :companyInfoList="companyInfo"></product-list>
+      <title-list stitle="已申请产品">
+        <product-list @on-apply="redirectH5" :companyInfoList="appliedCompanyInfo"></product-list>
+      </title-list>
     </list-container>
-  </section>
 </template>
 
 <script>
 //  import axios from 'axios'
 //  import Vue from 'vue'
-//  import { Vuex, mapActions, mapGetters } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
   import ListContainer from '~components/loan/ListContainer'
-//  import ProductList from '~components/loan/ProductList'
+  import ProductList from '~components/loan/ProductList'
   import TitleList from '~components/loan/TitleList'
 //  import { authApi, applyApi } from '~plugins/api'
 //  import { applyApi } from '~plugins/api/index'
@@ -25,11 +23,10 @@
 //    market: 'mktlogin',
 //    loan: 'login'
 //  }
-
   export default {
     components: {
       ListContainer,
-//      ProductList,
+      ProductList,
       TitleList
     },
     data () {
@@ -37,13 +34,13 @@
         mode: 'market'
       }
     },
-//    computed: mapGetters([
-//      'hasLogin', 'companyInfo', 'appliedCompanyInfo', 'isLoading'
-//    ]),
+    computed: mapGetters([
+      'hasLogin', 'companyInfo', 'appliedCompanyInfo', 'isLoading'
+    ]),
     methods: {
-//      ...mapActions([
-//        'applyWithoutLogin', 'initUserInfo', 'applyDefaultValue', 'saveApplyInfo', 'setLoadingStatus', 'showToast', 'skipBind'
-//      ]),
+      ...mapActions([
+        'applyWithoutLogin', 'initUserInfo', 'applyDefaultValue', 'saveApplyInfo', 'setLoadingStatus', 'showToast', 'skipBind'
+      ]),
       redirectH5 (name) {
 //        if (window._taq) {
 //          window._taq.push({convert_id: '59757795848', event_type: 'button'}) // toutiao

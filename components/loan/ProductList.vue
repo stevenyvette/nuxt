@@ -1,7 +1,8 @@
 <template>
   <div class="info-container">
-    <div :class="{ applied: checkIsApplied(name), 'loan-company-info-wrapper': true }"
-         v-for="(product, name, index) in companyInfoList" @click="getLoanCompany(name, index)">
+    <!--<div :class="{ applied: checkIsApplied(name), 'loan-company-info-wrapper': true }"-->
+    <div class="loan-company-info-wrapper"
+    v-for="(product, name, index) in companyInfoList" @click="getLoanCompany(name, index)">
       <single-product :product="product" :name="name"></single-product>
     </div>
   </div>

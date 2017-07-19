@@ -3,7 +3,7 @@ import qs from 'qs'
 import { responseHandler } from './helper'
 
 export const http = axios.create({
-  baseURL: process.env.NODE_ENV === 'development' ? '/api' : '/',
+  baseURL: process.env.NODE_ENV === 'development' ? '/' : '/',
   transformRequest: [data => qs.stringify(data)],
   timeout: 8000
 })
@@ -72,7 +72,7 @@ export const userApi = {
 
 export const loanApi = {
   fetch () {
-    return http.get('loan/getLoanInfo/')
+    return http.get('http://localhost:8081/loan/getLoanInfo/')
   },
   getRecProductList () {
     return http.get('loan/getResultPageLoanInfo')
